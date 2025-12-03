@@ -1,0 +1,18 @@
+[workspace]
+members = [
+    "common",
+    "day_1",
+    "day_2",
+    "template",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+authors = ["David Koloski <djkoloski@gmail.com>"]
+edition = "2024"
+publish = false
+
+[workspace.dependencies]
+anyhow = "1"
+common = { path = "common" }
