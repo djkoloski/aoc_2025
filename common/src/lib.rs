@@ -7,7 +7,7 @@ use std::{
     time::Instant,
 };
 
-pub use anyhow::{bail, Context, Error, Result};
+pub use anyhow::{Context, Error, Result, bail};
 
 pub trait Input: Sized {
     fn parse_reader<R: BufRead>(reader: R) -> Result<Self>;
@@ -61,11 +61,7 @@ pub struct Grid<T> {
 }
 
 impl<T> Grid<T> {
-    pub fn from_elements(
-        width: usize,
-        height: usize,
-        elements: Vec<T>,
-    ) -> Self {
+    pub fn from_elements(width: usize, height: usize, elements: Vec<T>) -> Self {
         assert_eq!(width * height, elements.len());
 
         Self {
